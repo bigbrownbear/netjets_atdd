@@ -6,11 +6,7 @@ Before do
   @calc = Calculator.new
 end
 
-Given /^I have entered '4' into the calculator$/ do |num|
-  @calc.push num.to_i
-end
-
-And /^I have entered '17' into the calculator$/ do |num|
+Given /^I have entered (\d) into the calculator$/ do |num|
   @calc.push num.to_i
 end
 
