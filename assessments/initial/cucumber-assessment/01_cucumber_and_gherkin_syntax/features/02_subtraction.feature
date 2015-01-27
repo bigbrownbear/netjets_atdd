@@ -6,7 +6,7 @@ Feature: Subtraction
   Scenario: Subtract several numbers
     Given I have entered 4 into the calculator
     And I have entered 17 into the calculator
-    And I have entered 6 __ the calculator
+    And I have entered 6 into the calculator
     When I press subtract
     Then the result should be -19 on the screen
 

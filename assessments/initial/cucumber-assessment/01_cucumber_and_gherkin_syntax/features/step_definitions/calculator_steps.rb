@@ -9,8 +9,12 @@ Given /^I have entered (\d) into the calculator$/ do |num|
   @calc.push num.to_i
 end
 
-When /^I press (.*)$/ do |op|
-  @result = @calc.send op
+When(/^I have entered (\d+) into the calculator$/) do |num|
+  @calc.push num.to_i
+end
+
+When /^I press (.*)$/ do |button|
+  @result = @calc.send button
 end
 
 Then /^the result should be (.*) on the screen$/ do |output|
@@ -33,7 +37,7 @@ Then /^I should see the previously stored result$/ do
 end
 
 When /^I use the special constant __$/ do |special_constant_name|
-  @calc.push_special __
+  @calc.push special_constant_name
 end
 
 Then /^the current value on the screen should be (.*)$/ do |output|
