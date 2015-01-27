@@ -4,6 +4,6 @@ Feature: Looking for flight times
     When I search for a one-way flight
     Then I get the available flights for that one way trip
   
-  Sceanrio: Looking for a rounds trip flight
+  Scenario: : Looking for a rounds trip flight
   
-  Sceanrio: Looking for a multi-city flight
+  Scenario: : Looking for a multi-city flight
