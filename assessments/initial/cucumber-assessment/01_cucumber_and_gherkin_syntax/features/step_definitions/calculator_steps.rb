@@ -28,7 +28,7 @@ Given /^I have done some arithmetic$/ do
   @calc.memadd
 end
 
-When /^I have __$/ do
+When /^I have cleared the screen$/ do
   @calc.clear
 end
 
