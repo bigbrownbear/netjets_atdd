@@ -1,4 +1,3 @@
-calculator_steps
 $:.unshift(File.dirname(__FILE__) + '/../../lib')
 require 'calculator'
 
