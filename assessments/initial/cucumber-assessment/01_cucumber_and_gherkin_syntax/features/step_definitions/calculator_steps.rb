@@ -1,3 +1,4 @@
+calculator_steps
 $:.unshift(File.dirname(__FILE__) + '/../../lib')
 require 'calculator'
 
@@ -5,7 +6,7 @@ Before do
   @calc = Calculator.new
 end
 
-Given /^I have entered (.*) into the calculator$/ do |num|
+Given /^I have entered (.d*) into calculator$/ do |num|
   @calc.push num.to_i
 end
 
