@@ -1,5 +1,5 @@
 When(/^I look up the daily flight schedule between two cities$/) do
-  @browser.goto 'www.Southwest.com'
+  @browser.goto(SouthwestOpeningPage)
   #click on the "Flight" link
   #click on the "Flight Schedule" link
   #enter DEP city code
