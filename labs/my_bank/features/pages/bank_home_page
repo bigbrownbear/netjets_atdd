@@ -1,0 +1,15 @@
+require 'page-object'
+
+class BankHomePage
+
+include PageObject
+
+link(:search_for_atms, :class => 'search-atms')
+#link(:search_branch_locations, :class => 'search-branch-locations')
+#button(:view_loan_types, :name => 'loan-types')
+#button(:account_login, name => 'account-login')
+#button(:make_loan_payment, :name => 'make_loan_payments')
+
+  end
+
+

@@ -1,17 +1,13 @@
-Given(/^I want to find an ATM that has a Braille keyboard$/) do
-  #open bank URL
-  #select to search for ATMs...
-  #on_page(BankHomeScreen).search_for_atms
-end
+require 'page-object'
+include PageObject::PageFactory
 
 When(/^I search for an ATM with a Braille keyboard$/) do
-  #enter address for search area...on_page(AtmSearch).address_info
-  #select Braille feature....link"Braille"
-  #select to search...atm_search.click
+  open_the_search_atm_screen
+  submit_valid_location_info_braille
 end
 
 Then(/^ATMs with Braille keyboards near the address I entered$/) do
-  #verify that ATM locations are displayed which include:
+  #collect returned results and verify that ATM locations are displayed which include:
   #building name
   #address
   #hours
@@ -20,15 +16,8 @@ Then(/^ATMs with Braille keyboards near the address I entered$/) do
 
 end
 
-Given(/^I want to find an ATM that is wheelchair accessible$/) do
-  #open bank URL
-  #select to search for ATMs
-end
-
 When(/^I search for an ATM that is wheelchair accessible$/) do
-  #enter address for search area
-  #select wheelchair accessible feature
-  #select to search
+  submit_valid_location_info_for_wheelchair
 end
 
 Then(/^ATMs that are wheelchair accessible near the address I entered$/) do
@@ -41,11 +30,7 @@ Then(/^ATMs that are wheelchair accessible near the address I entered$/) do
 end
 
 When(/^I search for handicapped accessible ATMS in an area where there are none$/) do
-  #open bank URL
-  #select to search for ATMs
-  #enter address for search area in the Atlantic Ocean
-  #select wheelchair accessible feature
-  #select to search
+  on_page(SearchATMs).submit_invalid_address
 end
 
 Then(/^a message is displayed indicating that the user must refine their search$/) do
@@ -53,20 +38,16 @@ Then(/^a message is displayed indicating that the user must refine their search$
 end
 
 When(/^I search for ATMS without entering a city or state$/) do
-  #open bank URL
-  #select to search for ATMs
-  #enter '123 Maple Street'
-  #select wheelchair accessible feature
-  #select to search
+  on_page(SearchATMs).submit_address_without_city_state
+
 end
 
 Then(/^a message is displayed indicating that the user must complete the address field$/) do
-  #verify that a message is displayed that the user must complete the address field
+  #verify that a message displays that the user must complete the address field
+
+
 end
 
 When(/^I search for ATMS without entering any address information$/) do
-  #open bank URL
-  #select to search for ATMs
-  #select wheelchair accessible feature
-  #select to search
+  submit_address_without_any_information
 end
