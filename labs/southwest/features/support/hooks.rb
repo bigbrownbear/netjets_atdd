@@ -6,9 +6,9 @@ Before do |scenario|
 
 end
 
-# After do |scenario|
-#   @browser.close
-# end
+ After do |scenario|
+   @browser.close
+ end
 
 # browser = Watir::Browser.new :firefox
 # browser.goto 'bit.ly/watir-webdriver-demo'
