@@ -14,7 +14,7 @@ class AboutStrings < Test::Unit::TestCase
 
   def test_string_concatenation
     string = "Hello, " + "World"
-    assert_equal __, string
+    assert.string='Hello, World'
   end
 
   def test_string_interpolation

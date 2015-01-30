@@ -1,4 +1,5 @@
 require 'helper'
+require 'page-object'
 
 class AboutClasses < Test::Unit::TestCase
   class Dog
@@ -37,7 +38,7 @@ class AboutClasses < Test::Unit::TestCase
     fido = Dog5.new
 
     fido.name = "Fido"
-    assert_equal __, fido.name
+    expect(Dog5).to="Fido"
   end
 
   # ------------------------------------------------------------------
@@ -58,7 +59,7 @@ class AboutClasses < Test::Unit::TestCase
     fido = Dog6.new("Fido")
     rover = Dog6.new("Rover")
 
-    assert_equal __, rover.name != fido.name
+    assert rover.name != fido.name
   end
 
 

@@ -65,7 +65,7 @@ class AboutControlStatements < Test::Unit::TestCase
       result = result * i
       i += 1
     end
-    assert_equal __, result
+    assert_i='362880'
   end
 
   def test_next_statement
